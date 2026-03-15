@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samudrika | Next-Gen Maritime AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i data-lucide="droplet"></i>
+                <span>SAMUDRIKA</span>
+            </div>
+            <div class="nav-links">
+                <a href="#product">Models</a>
+                <a href="#technology">Technology</a>
+                <a href="#research">Research</a>
+                <a href="#company">Company</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn btn-outline btn-icon" aria-label="Toggle Theme">
+                    <i data-lucide="moon" class="moon-icon"></i>
+                    <i data-lucide="sun" class="sun-icon" style="display:none;"></i>
+                </button>
+                <button class="btn btn-outline d-none-mobile">Read Paper</button>
+                <button class="btn btn-primary">Try Samudrika</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-glow"></div>
+            <div class="hero-content">
+                <div class="hero-left slide-up">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        SAMUDRIKA v1.0 PREVIEW
+                    </div>
+                    <h1 class="hero-title">
+                        Redefining <br>
+                        <span class="text-gradient">Maritime Vision.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Pioneering underwater image enhancement using state-of-the-art FUnIE-GAN architectures. Revealing the deep with unprecedented clarity, speed, and real-time inference for edge devices.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary lg">Start Building</button>
+                        <button class="btn btn-secondary lg">Explore API</button>
+                    </div>
+                </div>
+
+                <div class="hero-right slide-up delay-1">
+                    <!-- Tabbed Stacked Cards mimicking Liquid.ai -->
+                    <div class="card-stack-container force-dark">
+                        <div class="card-tabs">
+                            <div class="tab active">01 Raw</div>
+                            <div class="tab">02 Enhancement</div>
+                            <div class="tab">03 Metrics</div>
+                        </div>
+                        <div class="stacked-cards">
+                            <div class="glass-card main-card">
+                                <div class="card-header">
+                                    <div class="dot-group">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                    <span class="card-title">Real-time Inference</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="image-placeholder before-img">
+                                        <div class="overlay">Deep Sea Distortions</div>
+                                    </div>
+                                    <div class="image-placeholder after-img">
+                                        <div class="overlay">FUnIE-GAN Enhanced</div>
+                                    </div>
+                                    <div class="slider-handle"></div>
+                                </div>
+                            </div>
+                            <div class="glass-card card-bg-1"></div>
+                            <div class="glass-card card-bg-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Marquee -->
+        <section class="marquee-section">
+            <p class="marquee-text">TRUSTED BY INNOVATORS IN OCEANOGRAPHY & MARITIME DEFENSE</p>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span>INDIAN NAVY</span>
+                    <span class="dot">✦</span>
+                    <span>DRDO</span>
+                    <span class="dot">✦</span>
+                    <span>NIO</span>
+                    <span class="dot">✦</span>
+                    <span>NIOT</span>
+                    <span class="dot">✦</span>
+                    <span>OCEAN X</span>
+                    <span class="dot">✦</span>
+                    <span>MARINE VISION CO.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Box Features -->
+        <section class="bento-section" id="technology">
+            <div class="section-heading stagger-element">
+                <h2>AI for the Ocean</h2>
+                <p>Deploy high-fidelity deep learning models directly on edge submersibles.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Large Card -->
+                <div class="bento-card large glass-panel stagger-element">
+                    <div class="bento-left">
+                        <div class="bento-icon">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <div class="badge-small">EDGE OPTIMIZED</div>
+                        <h3>On-Device Intelligence</h3>
+                        <p>Designed for ROVs and autonomous underwater vehicles. Samudrika's generator processes multi-megapixel streams natively on constrained hardware like Jetson clusters.</p>
+                    </div>
+                    <div class="bento-visual tech-visual">
+                        <div class="code-snippet force-dark">
+                            <code>
+                                <span class="kw">import</span> torch<br>
+                                <span class="kw">from</span> samudrika <span class="kw">import</span> run_pipeline<br><br>
+                                <span class="cmt"># Run 4K Realtime Enhancement</span><br>
+                                out = run_pipeline(<span class="str">"underwater.jpg"</span>, <span class="str">"checkpoints/v1.pt"</span>)<br>
+                                print(f<span class="str">"UIQM Score: {out['metrics']['uiqm']}"</span>)
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Cards -->
+                <div class="bento-card medium glass-panel stagger-element">
+                    <div class="bento-icon gradient-bg">
+                        <i data-lucide="layers"></i>
+                    </div>
+                    <div class="badge-small">ARCHITECTURE</div>
+                    <h3>FUnIE-GAN Backbone</h3>
+                    <p>Encoder-decoder with dense skip connections designed intentionally for sub-aquatic scattering and attenuation effects.</p>
+                </div>
+
+                <div class="bento-card medium glass-panel stagger-element">
+                    <div class="bento-icon gradient-bg">
+                        <i data-lucide="bar-chart-2"></i>
+                    </div>
+                    <div class="badge-small">METRICS</div>
+                    <h3>UIQM & SSIM Driven</h3>
+                    <p>Built-in evaluation matrix computing Underwater Image Quality Measure dynamically during inference.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Floating chat/action bar -->
+        <div class="floating-action-bar">
+            <span>Ready to explore the deep?</span>
+            <button class="btn btn-primary rounded">Contact Sales</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>Samudrika.</h2>
+                    <p>Synthesizing clarity from the abyss.</p>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-col">
+                        <h4>Models</h4>
+                        <a href="#">Edge Inference</a>
+                        <a href="#">Cloud Pipelines</a>
+                        <a href="#">UIEB Datasets</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Research</a>
+                        <a href="#">Careers</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="#">Twitter</a>
+                        <a href="#">GitHub</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Samudrika.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
