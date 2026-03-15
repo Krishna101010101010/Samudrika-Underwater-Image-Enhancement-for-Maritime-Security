@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), 'Inter', sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-blue: var(--blue-accent);
+}
+
+:root {
+  /* Ultra-minimalist Liquid.ai theme: Black, White, Blue */
+  --background: #010a0f; 
+  --foreground: #ffffff;
+  --card: #02121a;
+  --card-foreground: #ffffff;
+  --popover: #050505;
+  --popover-foreground: #ffffff;
+  
+  --primary: #ffffff; 
+  --primary-foreground: #000000;
+  
+  --secondary: #111111;
+  --secondary-foreground: #ffffff;
+  --muted: #111111;
+  --muted-foreground: #888888;
+  --accent: #111111;
+  --accent-foreground: #ffffff;
+  
+  --border: #222222;
+  --input: #222222;
+  --ring: #333333;
+  --radius: 1.5rem;
+  
+  --blue-accent: #0044ff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .liquid-glass {
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid #222;
+  }
+
+  .liquid-card {
+    background: #050505;
+    border: 1px solid #222;
+    border-radius: 1.5rem;
+  }
+}
+
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}
+
+/* ===== Animated Hero Styles ===== */
+
+/* Word-by-word appearance */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: text-shadow 0.3s ease;
+}
+
+@keyframes word-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SVG grid lines */
+.grid-line {
+  stroke: rgba(200, 180, 160, 0.08);
+  stroke-width: 0.5;
+  opacity: 0;
+  animation: grid-fade-in 2s ease-out forwards;
+}
+
+@keyframes grid-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Detail dots on grid intersections */
+.detail-dot {
+  fill: rgba(200, 180, 160, 0.3);
+  opacity: 0;
+  animation: dot-appear 0.6s ease-out forwards;
+}
+
+@keyframes dot-appear {
+  0% {
+    opacity: 0;
+    r: 0;
+  }
+  100% {
+    opacity: 1;
+    r: 2;
+  }
+}
+
+/* Corner decorative elements */
+.corner-element {
+  position: absolute;
+  opacity: 0;
+  animation: corner-appear 0.8s ease-out forwards;
+}
+
+@keyframes corner-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Floating particles */
+.floating-element {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(200, 180, 160, 0.25);
+  border-radius: 50%;
+  animation: float-drift 8s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+@keyframes float-drift {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.5;
+  }
+}
+
+/* Click ripple effect */
+@keyframes pulse-glow {
+  0% {
+    width: 4px;
+    height: 4px;
+    opacity: 0.6;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}
